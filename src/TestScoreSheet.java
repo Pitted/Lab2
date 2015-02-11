@@ -45,7 +45,7 @@ public class TestScoreSheet extends TestCase{
 		/*
 		 * ss1: X|5
 		 * ss2: /|5
-		 * ss3: 5|5
+		 * ss3: 6|6
 		 */
 		ss1.addThrow(0);
 		ss1.addThrow(5);
@@ -60,6 +60,16 @@ public class TestScoreSheet extends TestCase{
 		ss3.addThrow(4);
 		ss3.addThrow(4);
 		ss3.addThrow(4);
+		
+		assertTrue(ss1.getFrame()==3);
+		assertTrue(ss2.getFrame()==3);
+		assertTrue(ss3.getFrame()==3);
+		
+		assertEquals(ss1.getScore(), 0);
+		assertEquals(ss2.getScore(), 20);
+		assertEquals(ss3.getScore(), 12);
+		
+		
 	
 	}
 	
