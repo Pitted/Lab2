@@ -11,6 +11,17 @@ public class ScoreSheet {
 			scoresheet[i] = new Frame(i+1);
 		}
 	}
+	public int getFrame(){
+		//frames are 1 - 10, currentFrame is pointer to the array 0-9
+		return currentFrame+1;
+	}
+	public int getScore(){
+		return score;
+	}
+	public Frame getFrame(int i){
+		if(i>10||i<1) throw new IllegalArgumentException();
+		return scoresheet[i-1];
+	}
 	
 	public void addThrow(int remainingPins){
 		if(currentFrame>9) throw new IllegalArgumentException();
