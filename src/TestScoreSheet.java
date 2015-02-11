@@ -32,5 +32,7 @@ public class TestScoreSheet extends TestCase{
 		
 		
 	}
-	public void testTwoThrows
+	public void testTwoThrows(){
+		
+	}
 }

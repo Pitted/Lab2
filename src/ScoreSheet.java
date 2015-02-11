@@ -39,7 +39,7 @@ public class ScoreSheet {
 		//if second throw
 		else if(scoresheet[currentFrame].isFrameOver()){
 			numTilComp--;
-			if(numTilComp == 0){
+			if(numTilComp <= 0){
 				compute(currentFrame);
 			}
 			currentFrame++;
@@ -60,6 +60,7 @@ public class ScoreSheet {
 		if((scoresheet[index].getScoreType() == 11 || scoresheet[index].getScoreType() == 10 || scoresheet[index-1].getScoreType() == 11)
 				&& index != 9) throw new IllegalStateException();
 		for(int i = index; i>=0; i--){
+//			if strike
 			if(scoresheet[i].getScoreType() == 11){
 				if(i == index) //should only happen at 9
 					scoresheet[i].setScore(10);
@@ -68,13 +69,14 @@ public class ScoreSheet {
 				else
 					scoresheet[i].setScore(10+scoresheet[i+1].getScore()+ scoresheet[i+2].getScore());
 			}
+//			if spare
 			else if(scoresheet[i].getScoreType() == 10){
 				if(i == index) // should be 9
 					scoresheet[i].setScore(10);
 				else
 					scoresheet[i].setScore(10+scoresheet[i+1].getScore());
 			}
-			
+//			add frame score to scoresheet score, non spare or strike should be already in frame score
 			score += scoresheet[i].getScore();
 		}
 	}
