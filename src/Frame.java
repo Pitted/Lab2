@@ -31,7 +31,8 @@ public class Frame {
     }
     public void throww(int remainingPins){
     	if(turn > 1) throw new IllegalStateException();
-    	if(0<=remainingPins && remainingPins > totalPins)
+    	if(0<=remainingPins && remainingPins > totalPins) throw new IllegalArgumentException();
+    	totalPins = remainingPins;
     	if(remainingPins == 0){
     		if(turn == 0){
     			scoreType = 11;
@@ -43,10 +44,11 @@ public class Frame {
     		
     	}
     	else{
-    		totalPins = remainingPins;
     		turn++;
     		scoreType = 10-totalPins;
+    		score = 10 - totalPins;
     	}
+    	
     	
     }
     
