@@ -8,7 +8,7 @@ public class ScoreSheet {
 	private boolean finished = false;
 	public ScoreSheet(){
 		for(int i = 0; i<10; i++){
-			scoresheet[i] = new Frame(i+1);
+			scoresheet[i] = new Frame();
 		}
 	}
 	public int getFrame(){

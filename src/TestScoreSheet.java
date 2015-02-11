@@ -3,12 +3,16 @@ import junit.framework.TestCase;
 
 public class TestScoreSheet extends TestCase{
 //	
-	private ScoreSheet ss1 = new ScoreSheet();
+	private ScoreSheet ss1;
 //	
-	private ScoreSheet ss2 = new ScoreSheet();
+	private ScoreSheet ss2;
 //	
-	private ScoreSheet ss3 = new ScoreSheet();
+	private ScoreSheet ss3;
 	public void testOneThrow(){
+		ss1=new ScoreSheet();
+		ss2=new ScoreSheet();
+		ss3=new ScoreSheet();
+		
 		ss1.addThrow(0);
 		ss2.addThrow(5);
 		ss3.addThrow(9);
@@ -16,6 +20,8 @@ public class TestScoreSheet extends TestCase{
 		assertTrue(ss1.getFrame()==2);
 		assertTrue(ss2.getFrame()==1);
 		assertTrue(ss3.getFrame()==1);
+		assertTrue(ss2.getFrame(1).getCurrentTurn() == 1); //0-1
+		assertTrue(ss3.getFrame(1).getCurrentTurn()==1);
 		
 		assertEquals(ss1.getScore(), 0);
 		assertEquals(ss2.getScore(), 0);
@@ -33,6 +39,28 @@ public class TestScoreSheet extends TestCase{
 		
 	}
 	public void testTwoThrows(){
+		ss1=new ScoreSheet();
+		ss2=new ScoreSheet();
+		ss3=new ScoreSheet();
+		/*
+		 * ss1: X|5
+		 * ss2: /|5
+		 * ss3: 5|5
+		 */
+		ss1.addThrow(0);
+		ss1.addThrow(5);
+		ss1.addThrow(5);
 		
+		ss2.addThrow(5);
+		ss2.addThrow(0);
+		ss2.addThrow(5);
+		ss2.addThrow(5);
+		
+		ss3.addThrow(4);
+		ss3.addThrow(4);
+		ss3.addThrow(4);
+		ss3.addThrow(4);
+	
 	}
+	
 }

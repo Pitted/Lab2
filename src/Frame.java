@@ -2,13 +2,13 @@
 public class Frame {
     private int score = 0; // score of the frame
     private int scoreType = 0; //type of score 0-9, 10 spare, 11 strike,
-    private int currentFrame = 0; //specific frame
+   // private int currentFrame = 0; //specific frame
     private int turn = 0; // turn of the frame
     private int totalPins = 10; // total pins of the frame
     
     
-    public Frame(int t){
-    	turn = t;
+    public Frame(){
+    	//currentFrame = t;
     }
     
     public int getScore(){
@@ -17,9 +17,9 @@ public class Frame {
     public int getScoreType(){
     	return scoreType;
     }
-    public int getCurrentFrame(){
-    	return currentFrame;
-    }
+//    public int getCurrentFrame(){
+//    	return currentFrame;
+//    }
     public int getCurrentTurn(){
     	return turn;
     }
