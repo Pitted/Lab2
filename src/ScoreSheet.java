@@ -46,8 +46,15 @@ public class ScoreSheet {
 				compute(currentFrame);
 			}
 			currentFrame++;
+			
 	
 		}
+		else{
+			if(numTilComp<=0){
+				compute(currentFrame);
+			}
+		}
+		
 		if(currentFrame>9)
 			finished = true;
 		
