@@ -65,10 +65,9 @@ public class TestScoreSheet extends TestCase{
 		assertTrue(ss2.getFrame()==3);
 		assertTrue(ss3.getFrame()==3);
 		
-		assertEquals(ss1.getScore(), 0);
-		assertEquals(ss2.getScore(), 20);
-		assertEquals(ss3.getScore(), 12);
-		
+		assertEquals(0,ss1.getScore());
+		assertEquals(20,ss2.getScore());
+		assertEquals(12,ss3.getScore());
 		
 	
 	}

@@ -15,6 +15,9 @@ public class ScoreSheet {
 		//frames are 1 - 10, currentFrame is pointer to the array 0-9
 		return currentFrame+1;
 	}
+	public Frame getCurrentFrame(){
+		return scoresheet[currentFrame];
+	}
 	public int getScore(){
 		return score;
 	}
