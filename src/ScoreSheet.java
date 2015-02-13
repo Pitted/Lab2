@@ -67,8 +67,10 @@ public class ScoreSheet {
 		//if index is strike or spare or index-1 is strike and index doesn't equal 9
 		//or
 		//index-1 is equal to strike and 
+		
 		if(index!=0&&(scoresheet[index].getScoreType() == 11 || scoresheet[index].getScoreType() == 10 || scoresheet[index-1].getScoreType() == 11)
 				&& index != 9) throw new IllegalStateException();
+		score = 0;
 		for(int i = index; i>=0; i--){
 //			if strike
 			if(scoresheet[i].getScoreType() == 11){

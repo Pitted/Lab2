@@ -12,8 +12,8 @@ public class GameTest extends TestCase {
 	public void testOneThrow() {
 		ScoreSheet s = new ScoreSheet(); 
 		s.addThrow (4);
-		assertEquals (4, s.getCurrentFrame().getScore() ) ;
-		assertEquals ( 4, s.getScore()) ;
+		assertEquals (6, s.getCurrentFrame().getScore() ) ;
+		assertEquals ( 6, s.getScore()) ;
 		assertEquals(1, s.getFrame());
 		
 		
@@ -24,13 +24,13 @@ public class GameTest extends TestCase {
 		s.addThrow(4);
 		s.addThrow(2);
 		
-		
+		assertEquals(2, s.getFrame());
 		assertEquals (8 , s.getFrame(1).getScore()) ;
 		assertEquals (8, s.getScore());
 		
 	}
 	
-	public void ThreeThrows(){
+	public void testThreeThrows(){
 		ScoreSheet s2 = new ScoreSheet(); 
 		s2.addThrow(3);
 		s2.addThrow(1);
